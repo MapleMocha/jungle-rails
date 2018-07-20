@@ -133,4 +133,55 @@ cat3.products.create!({
 })
 
 
+## REVIEWS
+puts "Creating Reviews ..."
+
+Review.destroy_all
+
+rev1 = Review.create!({
+  product_id: '1',
+  user_id: '1',
+  description: 'Great bang for your buck!',
+  rating: 4,
+})
+rev2 = Review.create!({
+  product_id: '1',
+  user_id: '2',
+  description: '10/10 would recommend',
+  rating: 5,
+})
+rev3 = Review.create!({
+  product_id: '2',
+  user_id: '1',
+  description: '...meh...',
+  rating: 2,
+})
+rev4 = Review.create!({
+  product_id: '2',
+  user_id: '2',
+  description: 'Was a bit dissapointed, but it\'s not terrible',
+  rating: 3,
+})
+rev5 = Review.create!({
+  product_id: '2',
+  user_id: '3',
+  description: 'Had low expectations for this, and it was exactly what I thought it would be - cheap but does the trick',
+  rating: 4,
+})
+
+
+# def new
+#   @product = Product.new
+# end
+#
+# def create
+#   @product = Product.new(product_params)
+#
+#   if @product.save
+#     redirect_to [:admin, :products], notice: 'Product created!'
+#   else
+#     render :new
+#   end
+# end
+
 puts "DONE!"
