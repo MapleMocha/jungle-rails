@@ -6,9 +6,14 @@
   </header>
 
   <div class="order-summary jumbotron">
-    <table>
-      <thead><h2>Thank you <%= @order.email %> for your order!</h2></thead>
+    <table class="table table-bordered">
+      <thead><h2>Thank you  - <%= @order.email %> -  for your order!</h2></thead>
       <tbody>
+        <tr>
+          <th colspan="2"> Product </th>
+          <th> Quantity </th>
+          <th> Cost (¢)</th>
+        </tr>
         <% @order.line_items.each do |line_item| %>
           <%= render 'item', line_item: line_item %>
         <% end %>

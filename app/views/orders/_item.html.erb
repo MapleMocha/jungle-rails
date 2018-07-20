@@ -11,14 +11,12 @@
     <p><%= product.description %></p>
   </td>
   <td>
-    <h3>Quantity:</h3>
     <p>
       <%= line_item.quantity %>
     </p>
 
   </td>
   <td>
-    <h3>Total:</h3>
-      <p><%= line_item.total_price_cents %></p>
+      <p><%= product.price * line_item.quantity %></p>
   </td>
 </tr>
