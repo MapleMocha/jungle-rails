@@ -3,5 +3,8 @@
     <span> <%= review.user_id %></span>
     <span> <%= review.description %></span>
     <span> <%= review.rating %></span>
+    <% if current_user.id == review.user_id %>
+      <%= link_to fa_icon('trash'), product_review_path(@product, review), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
   </div>
 </li>
