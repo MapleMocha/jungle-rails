@@ -50,8 +50,10 @@
   </div>
 <% else %>
   <div class="order-summary jumbotron">
-    <h1> You're cart is empty :) </h1>
-    <%= link_to('back', '/') %>
+    <h3> You're cart is empty </h3>
+    </br>
+    </br>
+    <%= link_to('back', '/', class: 'btn btn-lg btn-primary')%>
   </div>
 <% end %>
 
