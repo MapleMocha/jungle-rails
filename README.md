@@ -15,6 +15,12 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 8. Put Stripe (test) keys into appropriate .env vars
 9. Run `bin/rails s -b 0.0.0.0` to start the server
 
+## Final Product
+!['ScreenShot of Jungle Home Page - 1'](https://github.com/MapleMocha/Jungle/docs/HomePage-1.png)
+!['ScreenShot of Jungle Home Page - 2'](https://github.com/MapleMocha/Jungle/docs/HomePage-2.png)
+!['ScreenShot of Jungle Cart Page'](https://github.com/MapleMocha/Jungle/docs/CartExample.png)
+!['ScreenShot of Jungle Order Confirmation'](https://github.com/MapleMocha/Jungle/docs/OrderConfirmation.png)
+
 ## Stripe Testing
 
 Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
