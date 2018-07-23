@@ -4,9 +4,24 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>This is a Test!</h1>
+    <h1>Welcome to the Jungle! Congrats on your recent order - your receipt can be found below. Come back soon!</h1>
     <p>
-      Sample mail sent using smtp.
+      <thead>Your Order:</thead>
+      <tbody>
+        <tr>
+          <th colspan="2"> Product </th>
+          <th> Quantity </th>
+          <th> Cost ($)</th>
+        </tr>
+        <% @order.line_items.each do |line_item| %>
+          <%= render 'orders/item', line_item: line_item %>
+        <% end %>
+        <tr>
+          <h3>Order Total:  $ <%= sprintf('%.2f', @order.total_cents/100)%></h3>
+        </tr>
+        <br />
+      </tbody>
+    </table>
     </p>
   </body>
 </html>
