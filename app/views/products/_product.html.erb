@@ -8,14 +8,33 @@
   <p class="description">
     <%= product.description %>
   </p>
+  </br>
+  </br>
   <footer class="actions">
-    <%- if (!product.quantity.zero?) %>
+    <% if (!product.quantity.zero?) %>
       <%= link_to add_item_cart_path(product_id: product.id), class: 'btn btn-primary', method: :put do %>
         <%= fa_icon "shopping-cart", text: 'Add' %>
       <% end %>
     <% end %>
     <%= link_to product, class: 'btn btn-default pull-right' do %>
       Details &raquo;
+    <% end %>
+    <% if (product.reviews.any?)
+      overall_rating = 0
+      count = 0
+       product.reviews.each do |review|
+          overall_rating += review.rating
+          count += 1
+       end%>
+      <p>
+        </br>
+        Average rating: <%= overall_rating/product.reviews.count %>/5
+      </p>
+    <% else %>
+    <p>
+    </br>
+      Not yet reviewed
+    </p>
     <% end %>
   </footer>
   <%- if (product.quantity.zero?) %>
