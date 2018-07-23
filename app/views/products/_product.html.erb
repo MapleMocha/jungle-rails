@@ -19,21 +19,15 @@
     <%= link_to product, class: 'btn btn-default pull-right' do %>
       Details &raquo;
     <% end %>
-    <% if (product.reviews.any?)
-      overall_rating = 0
-      count = 0
-       product.reviews.each do |review|
-          overall_rating += review.rating
-          count += 1
-       end%>
+    <% if (product.reviews.any?) %>
       <p>
         </br>
-        Average rating: <%= overall_rating/product.reviews.count %>/5
+        Average rating: <%= product.reviews.average(:rating) %>/5
       </p>
     <% else %>
     <p>
     </br>
-      Not yet reviewed
+      Not yet been reviewed
     </p>
     <% end %>
   </footer>
