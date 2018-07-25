@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Product Details", type: :feature, js: true do
+RSpec.feature "AddToCarts", type: :feature, js: true do
 
   # SETUP
   before :each do
@@ -18,16 +18,15 @@ RSpec.feature "Product Details", type: :feature, js: true do
 
   scenario "They see all products" do
 
-
     visit root_path
 
     within('footer.actions') do
-      click_on 'Details'
+      click_on 'Add'
     end
 
     save_screenshot
 
-    expect(page).to have_css 'section.products-show', count: 1
+    expect(page).to have_content('My Cart (1)') 
   end
 
 end
